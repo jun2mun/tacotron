@@ -94,7 +94,7 @@ if __name__ == '__main__':
   synthesizer.load(args.checkpoint)
   print('Serving on port %d' % args.port)
   simple_server.make_server('0.0.0.0', args.port, api).serve_forever()
-  sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+  #sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
   #python에서 Address already in use 해결
 else:
   synthesizer.load(os.environ['CHECKPOINT'])
