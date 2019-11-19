@@ -81,7 +81,10 @@ if __name__ == '__main__':
   from wsgiref import simple_server
   parser = argparse.ArgumentParser()
   parser.add_argument('--checkpoint', required=True, help='Full path to model checkpoint')
-  parser.add_argument('--port', type=int, default=9000)
+  parser.add_argument('--port', type=int, default=4000)
+  #Colab laboratory 사용 도중 9000포트를 사용하면 Address already in use Error 발생
+  #해결 방법 : !lsof -i :<port> 명령어 입력을 통해 사용중이지 않은 포트 번호를 찾는다. 그 번호로 바꿨다.
+  #9000포트 -> 4000포트
   parser.add_argument('--hparams', default='',
     help='Hyperparameter overrides as a comma-separated list of name=value pairs')
   args = parser.parse_args()
