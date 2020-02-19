@@ -35,7 +35,7 @@ def write_metadata(metadata, out_dir):
 
 def main():
   parser = argparse.ArgumentParser()
-  parser.add_argument('--base_dir', default=os.path.dirname('/content/drive/My Drive/storage/tacotron/'))
+  parser.add_argument('--base_dir', default=os.path.dirname('/content/drive/My Drive/Machine_Learning/Samples/LJSpeech-1.1'))
   parser.add_argument('--output', default='training')
   parser.add_argument('--dataset', required=True, choices=['blizzard', 'ljspeech'])
   parser.add_argument('--num_workers', type=int, default=cpu_count())
